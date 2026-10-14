@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="QuickNotes note-taking API client demo.">
+  <title>QuickNotes — Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="api.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <p class="eyebrow">QUICKNOTES</p>
+      <h1>Your ideas, organized.</h1>
+      <p class="subtitle">A simple notes interface powered by a REST API demo.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="toolbar" aria-label="Load notes">
+      <div>
+        <h2>Your notes</h2>
+        <p class="muted">Load sample notes, add a note, or remove a note from this session.</p>
+      </div>
+      <button type="button" id="load-btn">Load notes</button>
+    </section>
+
+    <p id="status" class="status" role="status" aria-live="polite">Ready. Load notes to get started.</p>
+
+    <section class="panel" aria-labelledby="create-heading">
+      <h2 id="create-heading">Create a note</h2>
+      <form id="note-form">
+        <div class="field">
+          <label for="title-input">Title <span aria-hidden="true">*</span></label>
+          <input id="title-input" name="title" type="text" maxlength="100" required
+                 placeholder="e.g. Ideas for my portfolio">
+          <small>Required, up to 100 characters.</small>
+        </div>
+        <div class="field">
+          <label for="body-input">Note</label>
+          <textarea id="body-input" name="body" rows="4"
+                    placeholder="Write your thoughts here..."></textarea>
+        </div>
+        <button type="submit" id="submit-btn">Create note</button>
+      </form>
+    </section>
+
+    <section class="notes-section" aria-labelledby="notes-heading">
+      <h2 id="notes-heading">Notes list</h2>
+      <ul id="notes-list" class="notes-list"></ul>
+    </section>
+
+    <p class="footnote">Demo note: JSONPlaceholder simulates creating and deleting records; its server data does not persist those changes.</p>
+  </main>
+
+  <footer>
+    <div class="container">QuickNotes System Design · API client learning project</div>
+  </footer>
+</body>
+</html>
